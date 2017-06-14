@@ -14,9 +14,9 @@ class Course < ActiveRecord::Base
     foreign_key: :prereq_id,
     class_name: :Course
 
-  has_one :instructor,
-    primary_key: :instructor_id,
-    foreign_key: :id,
-    class_name: :User 
+  belongs_to :instructor,
+    primary_key: :id
+    foreign_key: :instructor_id,
+    class_name: :User
 
 end
