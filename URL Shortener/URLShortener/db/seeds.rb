@@ -23,15 +23,12 @@ ActiveRecord::Base.transaction do
 
   Visit.destroy_all
   Visit.record_visit!(user1, short1)
-  Visit.record_visit!(user1, short2.short_url)
-  Visit.record_visit!(user1, short3.short_url)
-  Visit.record_visit!(user1, short4.short_url)
-  Visit.record_visit!(user1, short5.short_url)
-  Visit.record_visit!(user2, short1.short_url)
-  Visit.record_visit!(user2, short2.short_url)
-  Visit.record_visit!(user3, short3.short_url)
-  Visit.record_visit!(user4, short4.short_url)
-  Visit.record_visit!(user5, short5.short_url)
-  Visit.record_visit!(user5, short3.short_url)
-  Visit.record_visit!(user5, short1.short_url)
+  Visit.record_visit!(user1, short2)
+  Visit.record_visit!(user1, short3)
+  Visit.record_visit!(user1, short4)
+  Visit.record_visit!(user1, short5)
+  Visit.record_visit!(user2, short1)
+  Visit.record_visit!(user2, short2)
+  Visit.record_visit!(user3, short3)
+
 end

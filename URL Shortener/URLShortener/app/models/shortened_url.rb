@@ -27,6 +27,21 @@ class ShortenedUrl < ActiveRecord::Base
     class_name: :Visit
 
   has_many :visitors,
+    -> { distinct },
     through: :visits,
     source: :users
+
+  def num_clicks
+    self.visits.count
+  end
+
+  def num_uniques
+    self.visitors.count
+  end
+
+  def num_recent_uniques
+    self.visitors.select{|visitor| visitor.created_at >= 10.minutes.ago}.count
+    # n = self.visitors.select { |visitor| visitor.created_at >= 10.minutes.ago }
+    # n.count
+  end
 end
